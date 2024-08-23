@@ -1,5 +1,6 @@
 import Config
 
+# nice code reloader
 config :rl,
   "{lib,config}/**/*.{ex,exs}": Rl.Watcher.CompileFormat,
   "mix.exs": Rl.Watcher.Compile,

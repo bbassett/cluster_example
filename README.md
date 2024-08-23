@@ -2,25 +2,36 @@
 
 Determine if an application is likely to match other applications (as a group) based on similar file structure
 
-## Installation
+## Getting Started
 
-# TODO
+```elixir
+git clone https://github.com/bbassett/cluster.git
+mix deps.get
+iex -S mix
+```
 
 ## Usage
-
-# TODO
+```elixir
+iex(1)> threshold = 0.8
+0.8
+iex(2)> Cluster.cluster_apps("./path/to/file.json", threshold)
+{:ok,
+ [
+   ["ID1", "ID2"],
+   ["ID3", "ID4"],
+ ]}
+```
 
 ## Testing
 
-# mix test
+#### basic tests
+```bash
+mix test
+```
 
-## Steps
-- make it work
-- make it right
-- make it fast
+#### all tests, including example file (takes ~20s)
+```bash
+mix test --include disabled
+```
 
-## Ideas for improvement, A/B test against
 
-- Using a bloom filter?
-- just check number of matches in folders, not filenames
-- file trigram matches between one app and the next?
