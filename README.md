@@ -6,6 +6,7 @@ Determine if an application is likely to match other applications (as a group) b
 
 ```elixir
 git clone https://github.com/bbassett/cluster.git
+cd cluster
 mix deps.get
 iex -S mix
 ```
