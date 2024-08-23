@@ -49,4 +49,14 @@ defmodule ClusterTest do
 
     assert Enum.count(result) == 19
   end
+
+  @tag :disabled
+  test "the results are orderd by the number of matches" do
+    filepath = "./test/fixtures/big_example.json"
+    {:ok, result} = Cluster.cluster_apps(filepath, 0.7)
+
+    totals = result |> Enum.map(fn matches -> Enum.count(matches) end)
+    ordered_totals = Enum.sort_by(totals, & &1, :desc)
+    assert totals == ordered_totals
+  end
 end

@@ -37,6 +37,7 @@ defmodule Cluster do
           [matching_apps | acc]
         end
       end)
+      |> Enum.sort_by(fn matches -> Enum.count(matches) end, :desc)
 
     {:ok, matches}
   end
